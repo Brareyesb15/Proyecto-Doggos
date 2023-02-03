@@ -1,0 +1,5 @@
+const {Router} = require("express");
+
+const dogRouter = Router();
+
+dogRouter.get("/", async ()) // COMENZAR RUTEO. FUNCIONES EN CONTROLLERS,  RUTAS SOLO PARA RECIBIR PARAMETROS, PASARLOS A LAS FUNCIONES Y RESPONDER. HACER ESTO VIENDO EL REPASO DE JORGE VEGA.
