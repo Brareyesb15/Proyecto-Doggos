@@ -1,5 +1,5 @@
 const {Router} = require("express");
-const  getTemps = require('../controllers/tempsControl.js')
+const  {getTemps, putTemps}= require('../controllers/tempsControl.js')
 
 const tempRouter = Router();
 
@@ -15,8 +15,15 @@ catch(error) {
 
 })
 
-tempRouter.get("/prueba", (req,res) =>{
-    res.status(200).send("estamos dentro")
+tempRouter.post("/", async (req,res) =>{
+    const result = await putTemps()
+
+   try{
+    res.status(200).send(result)
+   }
+   catch(error) {
+    res.status(400).send(error.message)
+   }
 })
 
 
